@@ -5,6 +5,11 @@ let secretNumber = Math.trunc(Math.random() * 20) + 1;
 let score = 20;
 let highscore = 0;
 
+// Simplifying
+const displayMessage = function (message) {
+  document.querySelector(".message").textContent = message;
+};
+
 // Check button functionality
 document.querySelector(".check").addEventListener("click", function () {
   const guess = Number(document.querySelector(".guess").value);
@@ -25,6 +30,17 @@ document.querySelector(".check").addEventListener("click", function () {
     if (score > highscore) {
       highscore = score;
       document.querySelector(".highscore").textContent = highscore;
+    }
+
+    // When guess is wrong
+  } else if (guess !== secretNumber) {
+    if (score > 1) {
+      displayMessage(guess > secretNumber ? "Too High!" : "Too Low!");
+      score--;
+      document.querySelector(".score").textContent = score;
+    } else {
+      displayMessage("You Lost the Game :(");
+      document.querySelector(".score").textContent = 0;
     }
   }
 });
