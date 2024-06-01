@@ -12,5 +12,19 @@ document.querySelector(".check").addEventListener("click", function () {
   // When there is no input
   if (!guess) {
     displayMessage("No Number!");
+
+    // When player wins
+  } else if (guess === secretNumber) {
+    displayMessage("Correct Answer");
+
+    document.querySelector(".number").textContent = secretNumber;
+
+    document.querySelector("body").style.backgroundColor = "#48e119";
+    document.querySelector(".number").style.width = "30rem";
+
+    if (score > highscore) {
+      highscore = score;
+      document.querySelector(".highscore").textContent = highscore;
+    }
   }
 });
