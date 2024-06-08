@@ -30,7 +30,8 @@
 
  - Random number generation between 1 and 20. <br>
  - Feedback on guesses. <br>
- - Simple UI. <br> <br>
+ - Simple UI. <br>
+ - Responsive design for optimal gameplay experience on various devices, including desktop and mobile. <br>
   
 <h3>Contributing</h3>
 
